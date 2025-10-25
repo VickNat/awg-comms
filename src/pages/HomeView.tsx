@@ -3,6 +3,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import HeroSection from "@/components/home/HeroSection";
+import AboutSection from "@/components/home/AboutSection";
 
 const HomeView = () => {
   const { setTheme } = useTheme();
@@ -12,7 +13,10 @@ const HomeView = () => {
       <div className="relative top-0 z-5">
         <HeroSection />
       </div>
-      <div className="relative h-screen z-10 bg-accent">Page contents here</div>
+
+      <div className="relative h-screen z-10 bg-accent">
+        <AboutSection />
+      </div>
     </div>
   );
 };
