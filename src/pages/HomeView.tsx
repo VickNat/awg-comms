@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
+import ClientsSection from "@/components/home/ClientsSection";
 
 const HomeView = () => {
   const { setTheme } = useTheme();
@@ -15,9 +16,12 @@ const HomeView = () => {
         <HeroSection />
       </div>
 
-      <div className="relative w-full px-16 bg-primary-foreground">
-        <AboutSection />
-        <ServicesSection />
+      <div className="relative w-full bg-primary-foreground">
+        <ClientsSection />
+        <div className="px-16">
+          <AboutSection />
+          <ServicesSection />
+        </div>
       </div>
     </div>
   );
