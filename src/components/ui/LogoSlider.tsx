@@ -9,7 +9,7 @@ type Clients = {
   image: string;
 };
 
-interface TrusedByProps {
+interface LogoSliderProps {
   clients: Clients[];
 }
 
@@ -33,7 +33,7 @@ const LogoItem: React.FC<{ client: Clients; keyPrefix: string; index: number }> 
   </div>
 );
 
-const LogoSlider: React.FC<TrusedByProps> = ({ clients }) => {
+const LogoSlider: React.FC<LogoSliderProps> = ({ clients }) => {
   const [topRef, { width: topWidth }] = useMeasure();
   const [bottomRef, { width: bottomWidth }] = useMeasure();
   const topXTranslation = useMotionValue(0);

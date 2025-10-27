@@ -6,6 +6,7 @@ import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ClientsSection from "@/components/home/ClientsSection";
+import PortfolioSection from "@/components/home/PortfolioSection";
 
 const HomeView = () => {
   const { setTheme } = useTheme();
@@ -21,6 +22,7 @@ const HomeView = () => {
         <div className="px-16">
           <AboutSection />
           <ServicesSection />
+          <PortfolioSection />
         </div>
       </div>
     </div>
