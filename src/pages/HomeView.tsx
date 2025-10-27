@@ -7,6 +7,7 @@ import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ClientsSection from "@/components/home/ClientsSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
+import NumbersSection from "@/components/home/NumbersSection";
 
 const HomeView = () => {
   const { setTheme } = useTheme();
@@ -23,6 +24,7 @@ const HomeView = () => {
           <AboutSection />
           <ServicesSection />
           <PortfolioSection />
+          <NumbersSection />
         </div>
       </div>
     </div>
