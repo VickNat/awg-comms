@@ -8,14 +8,16 @@ import ServicesSection from "@/components/home/ServicesSection";
 import ClientsSection from "@/components/home/ClientsSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
 import NumbersSection from "@/components/home/NumbersSection";
+import ShowReel from "@/components/home/ShowReel";
 
 const HomeView = () => {
   const { setTheme } = useTheme();
   setTheme("dark");
   return (
-    <div className="w-full h-full inline-block bg-muted">
+    <div className="w-full h-full inline-block">
       <div className="relative top-0 z-5">
         <HeroSection />
+        <ShowReel />
       </div>
 
       <div className="relative w-full bg-primary-foreground">
