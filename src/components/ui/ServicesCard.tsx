@@ -1,33 +1,28 @@
 import React from "react";
-import Image from "next/image";
 
 interface ServicesCardProps {
-//   iconurl: string;
   title: string;
-  description: string;
+  serviceList: string[];
+  serviceId: number
 }
 
 const ServicesCard: React.FC<ServicesCardProps> = ({
-//   iconurl,
+  serviceId,
   title,
-  description,
+  serviceList,
 }) => {
   return (
-    <div className="relative h-[18rem] text-primary p-6">
-      <div className="flex flex-col items-start h-full space-y-10">
-        {/* <div className="">
-          <Image
-            src={iconurl}
-            alt={title}
-            width={72}
-            height={72}
-            className="object-contain overflow-hidden"
-          />
-        </div> */}
-        <h3 className="text-xl font-semibold ">{title}</h3>
-        <p className="text- leading-relaxed">
-          {description}
-        </p>
+    <div className="relative text-primary bg- w-full py-6 border-t-1">
+      <div className="flex flex-1 items-start h-full w-full ">
+        <p className="text-7xl w-1/2">{`0${serviceId}`}</p>
+        <div className="flex flex-col gap-4">
+          <h3 className="text-xl font-semibold ">{title}</h3>
+          <div className="flex flex-col">
+            {serviceList.map((service, index) => (
+              <p key={index} className="leading-relaxed">{service}</p>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
