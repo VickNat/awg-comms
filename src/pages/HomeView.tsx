@@ -23,8 +23,8 @@ const HomeView = () => {
       <div className="relative w-full bg-primary-foreground">
         <div className="px-16">
           <AboutSection />
-          <ServicesSection />
           <PortfolioSection />
+          <ServicesSection />
         </div>
         <ClientsSection />
         <NumbersSection />
