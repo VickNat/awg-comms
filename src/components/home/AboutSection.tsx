@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutSection = () => {
   return (
-    <div className="min-h-screen w-full flex justify-center items-center">
+    <div className="min-h-[120vh] w-full flex justify-center items-center">
       <div className="relative h-full w-full flex flex-1 gap-16 items-center justify-center">
         <div className=" relative flex flex-col gap-16 items-center">
           <h2 className="text-7xl font-bold text-center">A Perfect Flow <br /> of a Story...</h2>
