@@ -5,8 +5,8 @@ const ServicesSection = () => {
   return (
     <div className="relative min-h-screen w-full">
       <div className="relative flex flex-1 my-12">
-        <h2 className="relative uppercase text-3xl w-1/2">
-          We Tell Your Story
+        <h2 className="relative uppercase text-5xl w-1/2">
+          What We Do
         </h2>
         {/* <button className="relative px-8 py-3 border border-primary rounded-full uppercase">
           Discover our services

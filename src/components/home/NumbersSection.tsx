@@ -31,20 +31,20 @@ const Counter: React.FC<{ end: number; suffix?: string }> = ({
 
 const NumbersSection = () => {
   return (
-    <div className="relative w-full py-16 pb-44 flex flex-col items-center justify-center gap-32">
-      <h2 className=" text-4xl text-center uppercase border-b-4 border-foreground py-3 px-8">Why Work with us?</h2>
-      <div className="w-full h-40 flex items-center justify-center gap-2 md:gap-4">
-        <div className="w-56 h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground">
+    <div className="relative w-full h-screen py-16 pb-44 flex flex-col items-center justify-center gap-32 bg-background">
+        <h2 className='text-5xl '>We Tell Your Brand Story</h2>
+        <div className="w-full h-40 flex items-center justify-center gap-2 md:gap-4">
+        <div className="w-[240px] h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground rounded-3xl">
           <Counter end={5} suffix="+" />
-          <span className="text-md">Years</span>
+          <span className="text-lg">Years</span>
         </div>
-        <div className="w-56 h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground">
+        <div className="w-[240px] h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground rounded-3xl">
           <Counter end={15} suffix="+" />
-          <span className="text-md">Clients</span>
+          <span className="text-lg">Clients</span>
         </div>
-        <div className="w-56 h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground">
+        <div className="w-[240px] h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground rounded-3xl">
           <Counter end={100} suffix="+" />
-          <span className="text-md">Projects</span>
+          <span className="text-lg">Projects</span>
         </div>
       </div>
     </div>
