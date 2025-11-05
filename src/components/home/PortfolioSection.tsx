@@ -3,11 +3,11 @@ import PortfolioCard from "../ui/PortfolioCard";
 
 const PortfolioSection = () => {
   return (
-    <div className="w-full py-16 flex flex-col items-center gap-32">
-      <div className="relative w-full flex flex-1 items-center justify-center">
+    <div className="w-full py-16 flex flex-col items-center justify-center gap-32">
+      <div className="relative w-full flex flex-1 items-center justify-start">
         <h2 className="relative uppercase text-5xl">Featured work</h2>
       </div>
-      <div className="relative w-4/5 grid grid-cols-2 gap-4 auto-rows-[minmax(160px,10fr)]">
+      <div className="relative w-full max-w-7xl grid grid-cols-2 gap-4 auto-rows-[minmax(160px,10fr)]">
         <div className="col-span-2 row-span-3 h-full">
           <PortfolioCard
             imagesrc="/studio.jpg"
