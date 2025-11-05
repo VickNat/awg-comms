@@ -14,7 +14,7 @@ const HeaderText = ({
       <motion.div
         initial={{ y: "100%" }}
         whileInView={{ y: 0 }}
-        viewport={{ root: containerRef, amount: 0, margin: "0px 0px -20% 0px", once: true }}
+        viewport={{ root: containerRef, amount: 0, margin: "0px 0px -10% 0px", once: true }}
         transition={{ ease: "easeOut", duration: 0.5 }}
       >
         {children}
@@ -35,7 +35,7 @@ const PText = ({
       <motion.div
         initial="initial"
         whileInView="WhileInView"
-        viewport={{ root: containerRef, amount: 0, margin: "0px 0px -20% 0px", once: true }}
+        viewport={{ root: containerRef, amount: 0, margin: "0px 0px -10% 0px", once: true }}
         transition={{ staggerChildren: 0.015, ease: "easeOut" }}
       >
         {children.split(" ").map((word, i) => (
@@ -88,7 +88,7 @@ const AboutSection = () => {
                 initial={{ y: "100%", opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ease: "easeIn"}}
-                viewport={{ root: aboutContainer, amount: 0, margin: "0px 0px -20% 0px", once: true }}
+                viewport={{ root: aboutContainer, amount: 0, margin: "0px 0px -10% 0px", once: true }}
                 >
                 Who We Are
               </motion.button>

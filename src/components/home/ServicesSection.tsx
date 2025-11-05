@@ -1,13 +1,45 @@
-import React from "react";
+import React, { useRef } from "react";
 import ServicesCard from "../ui/ServicesCard";
+import { motion } from "motion/react";
 
+const ServicesHeader = ({
+  children,
+  containerRef,
+}: {
+  children: string;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+}) => {
+  return (
+    <h1 className="w-full h-fit overflow-hidden uppercase text-5xl">
+      <motion.div
+        initial={{ y: "100%" }}
+        whileInView={{ y: 0 }}
+        viewport={{
+          root: containerRef,
+          amount: 0,
+          margin: "0px 0px -5% 0px",
+          once: true,
+        }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+      >
+        {children}
+      </motion.div>
+    </h1>
+  );
+};
 const ServicesSection = () => {
+  const serviceTitle = useRef<HTMLDivElement | null>(null);
+
   return (
     <div className="relative min-h-screen w-full">
       <div className="relative flex flex-1 my-12">
-        <h2 className="relative uppercase text-5xl w-1/2">
-          What We Do
-        </h2>
+        <div ref={serviceTitle} className="relative w-1/2 pb-28">
+          <div className="sticky top-12">
+            <ServicesHeader containerRef={serviceTitle}>
+              What We Do
+            </ServicesHeader>
+          </div>
+        </div>
         {/* <button className="relative px-8 py-3 border border-primary rounded-full uppercase">
           Discover our services
         </button> */}
