@@ -60,7 +60,7 @@ const AboutSection = () => {
   const aboutContainer = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className="min-h-[100vh] w-full flex justify-center items-center">
+    <div className="min-h-[110vh] w-full flex justify-center items-center">
       <div className="relative h-full w-full">
         <div
           ref={aboutContainer}
