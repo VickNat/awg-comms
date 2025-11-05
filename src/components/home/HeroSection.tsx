@@ -52,14 +52,14 @@ const HeroText = ({ children }: { children: string }) => {
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full min-h-screen object-center overflow-hidden flex bg-background">
+    <div className="relative w-full min-h-screen h-[120vh] object-center overflow-hidden flex bg-background">
       <div className="w-full h-full overflow-hidden">
         <Image
           src="/herodemo.svg"
           alt="hero pattern"
           width={2400}
           height={1500}
-          className="object-cover"
+          className="object-center w-full"
         ></Image>
       </div>
       <div className="absolute flex flex-col gap-10 h-[120vh] w-full justify-center items-center backdrop-blur-xs mask-x-from-70%">
