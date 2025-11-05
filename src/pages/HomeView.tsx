@@ -21,7 +21,7 @@ const HomeView = () => {
       </div>
 
       <div className="relative w-full bg-primary-foreground">
-        <div className="px-16 w-full flex flex-col items-center">
+        <div className="px-12 w-full flex flex-col items-center">
           <AboutSection />
           <PortfolioSection />
           <ServicesSection />

@@ -1,10 +1,10 @@
-import React, { useRef} from "react";
-import { motion } from "motion/react";
+import React, { useEffect, useRef, useState } from "react";
+import { animate, motion, useInView } from "motion/react";
 
 interface ServicesCardProps {
   title: string;
   serviceList: string[];
-  serviceId: number
+  serviceId: number;
 }
 
 const ServicesText = ({
@@ -33,17 +33,35 @@ const ServicesCard: React.FC<ServicesCardProps> = ({
   title,
   serviceList,
 }) => {
-
   const serviceContainer = useRef<HTMLDivElement | null>(null);
   return (
-    <div ref={serviceContainer} className="relative text-primary bg- w-full py-6 border-t-1">
+    <div
+      ref={serviceContainer}
+      className="relative text-primary bg- w-full py-6 border-t-1"
+    >
       <div className="flex flex-1 items-start h-full w-full ">
-        <p className="text-7xl w-1/2">{`0${serviceId}`}</p>
+        <h1 className="w-1/2 h-fit overflow-hidden uppercase text-7xl tracking-wider">
+          <motion.div
+            initial={{ y: "100%" }}
+            whileInView={{ y: 0 }}
+            viewport={{
+              amount: 0,
+              margin: "0px 0px -5% 0px",
+            }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+          >{'0'}{serviceId}</motion.div>
+        </h1>
         <div className="flex flex-col gap-4">
-          <div className="text-xl font-semibold "><ServicesText containerRef={serviceContainer}>{title}</ServicesText></div>
+          <div className="text-xl font-semibold ">
+            <ServicesText containerRef={serviceContainer}>{title}</ServicesText>
+          </div>
           <div className="flex flex-col">
             {serviceList.map((service, index) => (
-              <div key={index} className="leading-relaxed"><ServicesText containerRef={serviceContainer}>{service}</ServicesText></div>
+              <div key={index} className="leading-relaxed">
+                <ServicesText containerRef={serviceContainer}>
+                  {service}
+                </ServicesText>
+              </div>
             ))}
           </div>
         </div>
