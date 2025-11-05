@@ -1,10 +1,10 @@
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 import { motion } from "motion/react";
 
 interface ServicesCardProps {
   title: string;
   serviceList: string[];
-  serviceId: number
+  serviceId: number;
 }
 
 const ServicesText = ({
@@ -33,17 +33,25 @@ const ServicesCard: React.FC<ServicesCardProps> = ({
   title,
   serviceList,
 }) => {
-
   const serviceContainer = useRef<HTMLDivElement | null>(null);
   return (
-    <div ref={serviceContainer} className="relative text-primary bg- w-full py-6 border-t-1">
+    <div
+      ref={serviceContainer}
+      className="relative text-primary bg- w-full py-6 border-t-1"
+    >
       <div className="flex flex-1 items-start h-full w-full ">
         <p className="text-7xl w-1/2">{`0${serviceId}`}</p>
         <div className="flex flex-col gap-4">
-          <div className="text-xl font-semibold "><ServicesText containerRef={serviceContainer}>{title}</ServicesText></div>
+          <div className="text-xl font-semibold ">
+            <ServicesText containerRef={serviceContainer}>{title}</ServicesText>
+          </div>
           <div className="flex flex-col">
             {serviceList.map((service, index) => (
-              <div key={index} className="leading-relaxed"><ServicesText containerRef={serviceContainer}>{service}</ServicesText></div>
+              <div key={index} className="leading-relaxed">
+                <ServicesText containerRef={serviceContainer}>
+                  {service}
+                </ServicesText>
+              </div>
             ))}
           </div>
         </div>
