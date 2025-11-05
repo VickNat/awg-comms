@@ -9,11 +9,12 @@ const HeroHeader = ({ children }: { children: string }) => {
         initial="initial"
         whileInView="WhileInView"
         transition={{ staggerChildren: 0.04, ease: "easeInOut"}}
+        viewport={{once: true}}
       >
         {children.split("").map((l, i) => {
           return (
             <motion.span
-              variants={{ initial: { y: 32, opacity: 0 }, WhileInView: { y: 0, opacity: 1 } }}
+              variants={{ initial: { y: 32, opacity: 0, filter: "blur(10px)" }, WhileInView: { y: 0, opacity: 1, filter: "none" } }}
               className="inline-block"
               key={i}
             >
@@ -33,12 +34,13 @@ const HeroText = ({ children }: { children: string }) => {
         initial="initial"
         whileInView="WhileInView"
         transition={{ staggerChildren: 0.02, ease: "easeOut", delay: 1.5 }}
+        viewport={{once: true}}
       >
         {children.split("").map((l, i) => {
           return (
             <motion.span
-              variants={{ initial: { y: 20, opacity: 0 }, WhileInView: { y: 0, opacity: 1 } }}
-              className="inline-block"
+            variants={{ initial: { y: 32, opacity: 0, filter: "blur(10px)" }, WhileInView: { y: 0, opacity: 1, filter: "none" } }}
+            className="inline-block"
               key={i}
             >
               {l === " " ? "\u00A0" : l}
