@@ -18,6 +18,9 @@ const clients = [
 const ClientsSection = () => {
   return (
     <div className="relative w-full flex flex-col gap-24 py-16 bg- border-b">
+      <div className="relative min-h-screen bg-background">
+        sections separater
+      </div>
       {/* <h1 className="w-full h-fit overflow-hidden uppercase text-5xl px-12">
         <motion.div
           initial={{ y: "100%" }}
