@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useInView, animate } from "motion/react";
+import { useInView, animate, motion } from "motion/react";
 
 // Counter component for animated numbers
 const Counter: React.FC<{ end: number; suffix?: string }> = ({
@@ -22,7 +22,7 @@ const Counter: React.FC<{ end: number; suffix?: string }> = ({
   }, [isInView, end]);
 
   return (
-    <span ref={ref} className="text-4xl font-semibold">
+    <span ref={ref} className="text-5xl font- w-32">
       {displayValue}
       {suffix}
     </span>
@@ -31,20 +31,34 @@ const Counter: React.FC<{ end: number; suffix?: string }> = ({
 
 const NumbersSection = () => {
   return (
-    <div className="relative w-full h-screen py-16 pb-44 flex flex-col items-center justify-center gap-32 bg-background">
-        <h2 className='text-5xl '>We Tell Your Brand Story</h2>
-        <div className="w-full h-40 flex items-center justify-center gap-2 md:gap-4">
-        <div className="w-[240px] h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground rounded-3xl">
+    <div className="relative w-full h-[110vh] py-16 px-12 pb-44 flex flex-col items-center justify-center gap-32 bg-">
+      <h1 className="w-full h-fit overflow-hidden uppercase text-5xl">
+        <motion.div
+          initial={{ y: "100%" }}
+          whileInView={{ y: 0 }}
+          viewport={{
+            amount: 0,
+            margin: "0px 0px -5% 0px",
+          }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+        >
+          We tell your brand story
+        </motion.div>
+      </h1>
+      <div className="w-full flex flex-col items-start gap-2 text-4xl">
+        <div className="w-1/2 h-32 flex gap-8 text-foreground border-b items-end py-6 ">
           <Counter end={5} suffix="+" />
-          <span className="text-lg">Years</span>
+          <motion.span className="" initial={{x:-50, filter: "blur(10px)", opacity: 0}} whileInView={{x: 0, filter: "none", opacity: 1}} transition={{duration: 0.5, ease: "easeOut"}} viewport={{amount: 0, margin: "0px 0px -10% 0px" }}>
+            Years
+          </motion.span>
         </div>
-        <div className="w-[240px] h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground rounded-3xl">
+        <div className="w-1/2 h-32 flex gap-8 text-foreground border-b items-end py-6">
           <Counter end={15} suffix="+" />
-          <span className="text-lg">Clients</span>
+          <motion.span className="" initial={{x:-50, filter: "blur(10px)", opacity: 0}} whileInView={{x: 0, filter: "none", opacity: 1}} transition={{duration: 0.5, ease: "easeOut"}} viewport={{amount: 0, margin: "0px 0px -10% 0px" }}>Clients</motion.span>
         </div>
-        <div className="w-[240px] h-full bg-accent backdrop-blur-xs flex flex-col gap-2 items-center justify-center text-center text-foreground rounded-3xl">
+        <div className="w-1/2 h-32 flex gap-8 text-foreground border-b items-end py-6">
           <Counter end={100} suffix="+" />
-          <span className="text-lg">Projects</span>
+          <motion.span className="" initial={{x:-50, filter: "blur(10px)", opacity: 0}} whileInView={{x: 0, filter: "none", opacity: 1}} transition={{duration: 0.5, ease: "easeOut"}} viewport={{amount: 0, margin: "0px 0px -10% 0px" }}>Projects</motion.span>
         </div>
       </div>
     </div>
