@@ -21,7 +21,7 @@ const LogoItem: React.FC<{ client: Clients; keyPrefix: string; index: number }> 
 }) => (
   <div
     key={`${keyPrefix}-${index}`}
-    className="relative overflow-hidden h-40 min-w-[240px] max-w-[240px] flex items-center justify-center bg-accent rounded-3xl"
+    className="relative overflow-hidden h-40 min-w-[240px] max-w-[240px] flex items-center justify-center bg- rounded-3xl"
   >
     <Image
       src={client.image}
