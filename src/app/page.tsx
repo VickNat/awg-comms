@@ -1,12 +1,7 @@
-import HomeView from "@/pages/HomeView";
-import React from "react";
+import HomeView from "@/components/features/home/HomeView";
 
-const page = () => {
+export default function Home() {
   return (
-    <div>
-      <HomeView />
-    </div>
+    <HomeView />
   );
-};
-
-export default page;
+}
