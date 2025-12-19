@@ -20,25 +20,25 @@ const socialLinks = [
     name: 'LinkedIn', 
     icon: <Linkedin className="w-5 h-5" />, 
     href: '#', 
-    hoverColor: 'hover:text-[#0077b5]' // Official LinkedIn Blue
+    hoverColor: 'hover:text-[#0077b5]'
   },
   { 
     name: 'Instagram', 
     icon: <Instagram className="w-5 h-5" />, 
     href: '#', 
-    hoverColor: 'hover:text-[#E4405F]' // Instagram Pink
+    hoverColor: 'hover:text-[#E4405F]'
   },
   { 
     name: 'X', 
-    icon: <XIcon className="w-4 h-4" />, // Slightly smaller to match visual weight
+    icon: <XIcon className="w-4 h-4" />,
     href: '#', 
-    hoverColor: 'hover:text-white' // X Brand is White/Black
+    hoverColor: 'hover:text-white'
   },
   { 
     name: 'Facebook', 
     icon: <Facebook className="w-5 h-5" />, 
     href: '#', 
-    hoverColor: 'hover:text-[#1877F2]' // Facebook Blue
+    hoverColor: 'hover:text-[#1877F2]'
   }
 ]
 
@@ -53,10 +53,10 @@ const Footer = () => {
     <footer className="relative bg-background pt-20 pb-10 px-4 md:px-6">
       
       {/* THE BIG ISLAND CONTAINER */}
-      <div className="max-w-[95%] mx-auto bg-white/[0.02] border border-white/10 rounded-[3rem] overflow-hidden relative">
+      <div className="max-w-[95%] mx-auto bg-white/2 border border-white/10 rounded-[3rem] overflow-hidden relative">
         
         {/* Decorative Top Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent blur-[2px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-linear-to-r from-transparent via-primary/50 to-transparent blur-[2px]" />
         
         <div className="px-8 md:px-16 py-16 md:py-20">
           
