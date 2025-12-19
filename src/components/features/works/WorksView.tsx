@@ -181,14 +181,14 @@ const WorksView = () => {
         </motion.div>
 
         {/* 3. LOAD MORE (Scalability Indicator) */}
-        <div className="flex justify-center mt-20">
+        {/* <div className="flex justify-center mt-20">
           <Button 
             variant="outline" 
             className="rounded-full px-8 py-6 border-white/10 bg-transparent text-white hover:bg-white hover:text-black hover:border-white transition-all uppercase tracking-widest text-xs font-bold"
           >
             Load More Projects
           </Button>
-        </div>
+        </div> */}
 
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowUpRight, Play } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Play } from 'lucide-react'
 import Link from 'next/link'
 
 const projects = [
@@ -88,7 +88,7 @@ const FeaturedProjectsSection = () => {
 
             {/* --- NEW EXPLORE BUTTON --- */}
             {/* Consistent with Service Card Icons: Circle + ArrowUpRight */}
-            <Link href="/projects" className="inline-flex items-center gap-4 group cursor-pointer w-fit">
+            <Link href="/work" className="inline-flex items-center gap-4 group cursor-pointer w-fit">
                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-white/[0.02] group-hover:bg-primary group-hover:border-primary transition-all duration-500 ease-out">
                   <ArrowUpRight className="w-6 h-6 text-white group-hover:rotate-45 transition-transform duration-500 ease-out" />
                </div>
@@ -147,7 +147,7 @@ const FeaturedProjectsSection = () => {
                     {project.title}
                   </h3>
                   <div className="p-2 rounded-full border border-transparent group-hover:border-white/10 group-hover:bg-white/5 transition-all duration-300">
-                    <ArrowUpRight className="text-white/40 w-6 h-6 group-hover:text-primary group-hover:rotate-45 transition-transform duration-300" />
+                    <ArrowRight className="text-white/40 w-6 h-6 group-hover:text-primary group-hover:rotate-[-45deg] transition-transform duration-300" />
                   </div>
                 </div>
 

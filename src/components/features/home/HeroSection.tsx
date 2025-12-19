@@ -4,11 +4,13 @@ import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { useRouter } from 'next/navigation'
 
 const HERO_EASE = [0.16, 1, 0.3, 1] as const
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -113,10 +115,11 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="group relative rounded-full px-10 py-7 text-lg font-bold bg-primary hover:bg-primary transition-all duration-300 shadow-xl shadow-primary/10 overflow-hidden"
+            onClick={() => router.push('/contactus')}
           >
             <span className="relative z-10 flex items-center">
               Start a Project
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-500 ease-in-out group-hover:translate-x-2" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-500 ease-in-out group-hover:translate-x-2 group-hover:rotate-[-45deg]" />
             </span>
             <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           </Button>
@@ -127,6 +130,7 @@ const HeroSection = () => {
               background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)',
               backdropFilter: 'blur(12px)',
             }}
+            onClick={() => router.push('/work')}
           >
             <span className="relative z-10 transition-opacity group-hover:text-white">
               View Work

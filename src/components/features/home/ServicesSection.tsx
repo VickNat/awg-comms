@@ -12,6 +12,7 @@ import {
   Calendar, 
   ArrowUpRight 
 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 const services = [
   {
@@ -20,6 +21,7 @@ const services = [
     description: "Building trust and shaping narratives that resonate.",
     icon: <Megaphone className="w-8 h-8 text-white" />,
     colSpan: "md:col-span-1",
+    href: '/services'
   },
   {
     id: 2,
@@ -27,6 +29,7 @@ const services = [
     description: "Data-driven campaigns that convert audiences into advocates.",
     icon: <TrendingUp className="w-8 h-8 text-white" />,
     colSpan: "md:col-span-2",
+    href: '/services'
   },
   {
     id: 3,
@@ -34,6 +37,7 @@ const services = [
     description: "High-impact media buying and creative placement.",
     icon: <MonitorPlay className="w-8 h-8 text-white" />,
     colSpan: "md:col-span-1",
+    href: '/services'
   },
   {
     id: 4,
@@ -41,6 +45,7 @@ const services = [
     description: "Crafting distinct visual identities that stand the test of time.",
     icon: <Lightbulb className="w-8 h-8 text-white" />,
     colSpan: "md:col-span-1",
+    href: '/services'
   },
   {
     id: 5,
@@ -48,6 +53,7 @@ const services = [
     description: "Visual storytelling through world-class graphic design.",
     icon: <PenTool className="w-8 h-8 text-white" />,
     colSpan: "md:col-span-1",
+    href: '/services'
   },
   {
     id: 6,
@@ -55,6 +61,7 @@ const services = [
     description: "Full-scale video and multimedia production services.",
     icon: <Clapperboard className="w-8 h-8 text-white" />,
     colSpan: "md:col-span-2",
+    href: '/services'
   },
   {
     id: 7,
@@ -62,10 +69,13 @@ const services = [
     description: "Memorable on-ground activations and corporate experiences.",
     icon: <Calendar className="w-8 h-8 text-white" />,
     colSpan: "md:col-span-3 lg:col-span-1",
+    href: '/services'
   }
 ]
 
 const ServicesSection = () => {
+  const router = useRouter()
+  
   return (
     <section className="relative py-32 px-6 bg-background overflow-hidden">
       
@@ -110,10 +120,10 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              onClick={() => router.push(service.href)}
               className={`group relative p-8 md:p-10 rounded-3xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500 overflow-hidden flex flex-col justify-between h-full min-h-[300px] ${service.colSpan}`}
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(600px_at_50%_50%,rgba(229,124,35,0.08),transparent)]" />

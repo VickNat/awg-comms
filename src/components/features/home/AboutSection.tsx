@@ -4,8 +4,9 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-
+import { useRouter } from 'next/navigation'
 const AboutSection = () => {
+  const router = useRouter()
   return (
     <section className="relative py-32 md:py-48 bg-background overflow-hidden flex items-center justify-center">
       
@@ -101,6 +102,7 @@ const AboutSection = () => {
             className="group h-auto py-6 px-20 rounded-full text-xl font-bold tracking-tight transition-all duration-300
                        bg-white text-background 
                        hover:bg-primary hover:text-white border border-transparent"
+            onClick={() => router.push('/contactus')}
           >
             <span className="mr-8">Start Your Chapter</span>
             

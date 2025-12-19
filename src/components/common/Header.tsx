@@ -1,13 +1,13 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Menu } from 'lucide-react'
 import logo from '@/../public/Logo.png';
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 const navItems = [
   { name: 'Services', href: '/services' },
@@ -17,8 +17,15 @@ const navItems = [
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
+  const [activeItem, setActiveItem] = useState<string | null>(null)
   const { scrollY } = useScroll()
   const router = useRouter()
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setActiveItem(navItems.find(item => pathname.includes(item.href))?.name || null)
+  }, [pathname])
+
   // Detect scroll to shrink the header slightly or add backdrop (optional polish)
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 50)
@@ -59,7 +66,7 @@ const Header = () => {
             <Link 
               key={item.name} 
               href={item.href}
-              className="relative px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-white transition-colors group overflow-hidden"
+              className={`relative px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-white transition-colors group overflow-hidden ${activeItem === item.name ? 'bg-white/5' : 'text-white/70'}`}
             >
               <span className="relative z-10">{item.name}</span>
               
