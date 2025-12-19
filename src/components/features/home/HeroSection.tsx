@@ -46,8 +46,8 @@ const HeroSection = () => {
           className="absolute top-[-20%] left-[15%] w-[2px] h-[150%] bg-gradient-to-b from-white via-white/40 to-transparent blur-[3px]" 
         />
         <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[160%] aspect-square rounded-full">
-          <div className="absolute inset-0 rounded-full border-t-[1px] border-primary/30 blur-[2px]" />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/5 via-transparent to-transparent blur-3xl" />
+          <div className="absolute inset-0 rounded-full border-t border-primary/30 blur-[2px]" />
+          <div className="absolute inset-0 rounded-full bg-linear-to-b from-primary/5 via-transparent to-transparent blur-3xl" />
         </div>
       </motion.div>
 
@@ -57,14 +57,12 @@ const HeroSection = () => {
         className="container relative z-10 max-w-5xl mx-auto text-center md:mt-10"
       >
         
-        {/* --- FIXED TAGLINE (Consistent Line) --- */}
         <motion.div
           variants={fadeInUp}
           initial="initial"
           animate="animate"
           className="inline-flex items-center gap-3 mb-8 opacity-80"
         >
-          {/* The Orange Line (Consistent with Services/Featured) */}
           <div className="h-[1px] w-8 bg-primary" />
           
           <span className="text-white/60 text-xs md:text-sm font-bold tracking-[0.3em] uppercase">
@@ -72,7 +70,6 @@ const HeroSection = () => {
           </span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h1 
           variants={fadeInUp}
           initial="initial"
