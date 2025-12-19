@@ -7,18 +7,18 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Menu } from 'lucide-react'
 import logo from '@/../public/Logo.png';
+import { useRouter } from 'next/navigation'
 
 const navItems = [
   { name: 'Services', href: '/services' },
   { name: 'Work', href: '/work' },
   { name: 'About', href: '/about' },
-  { name: 'Insights', href: '/insights' },
 ]
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
-
+  const router = useRouter()
   // Detect scroll to shrink the header slightly or add backdrop (optional polish)
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 50)
@@ -77,6 +77,7 @@ const Header = () => {
         <div className="hidden md:block">
           <Button 
             className="group rounded-full bg-primary hover:bg-primary/90 text-white font-bold tracking-tight px-6 h-11 transition-all duration-300 shadow-[0_0_20px_rgba(229,124,35,0.2)] hover:shadow-[0_0_30px_rgba(229,124,35,0.4)]"
+            onClick={() => router.push('/contactus')}
           >
             <span className="mr-2 text-xs uppercase tracking-widest">Let's Talk</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-45" />
