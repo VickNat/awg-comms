@@ -59,7 +59,7 @@ const ContactusView = () => {
               </p>
 
               <a
-                href="tel:+251911223344"
+                href="tel:+251922451007"
                 className="group block relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary/50 transition-colors duration-300"
               >
                 <div className="relative z-10 p-6 flex items-center justify-between">
