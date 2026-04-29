@@ -4,44 +4,49 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Linkedin, Plus, ArrowUpRight } from 'lucide-react'
-import dummyImage from '@/../public/dummyImage.png'; // Reusing your dummy image for now
+// import dummyImage from '@/../public/dummyImage.png'; 
+import dawit from "@/../public/dawit.jpg"; 
+import bernabas from "@/../public/bernabas.png"; 
+import natanim from "@/../public/natanim.jpg"; 
+import kalkidan from "@/../public/kalkidan.jpg"; 
+
 
 // --- DUMMY DATA ---
 const stats = [
-  { label: "Years of Experience", value: "10+" },
-  { label: "Projects Delivered", value: "150+" },
-  { label: "Industry Awards", value: "12" },
-  { label: "Team Members", value: "25" },
+  { label: "Years of Experience", value: "7+" },
+  { label: "Projects Delivered", value: "100+" },
+  // { label: "Industry Awards", value: "12" },
+  { label: "Team Members", value: "20" },
 ]
 
 const teamMembers = [
   {
     id: 1,
-    name: "Alex Sterling",
-    role: "Founder & CEO",
-    bio: "Visionary strategist with a decade of experience in digital transformation.",
-    image: dummyImage,
+    name: "Dawit Tsegaye",
+    role: "CSO",
+    bio: "Chief Strategic Officer.",
+    image: dawit,
   },
   {
     id: 2,
-    name: "Sarah Jenkins",
-    role: "Creative Director",
-    bio: "Award-winning designer obsessed with typography and visual narrative.",
-    image: dummyImage,
+    name: "Natanim Ashenafi",
+    role: "CTO",
+    bio: "Chief Technologies Officer",
+    image: natanim,
   },
   {
     id: 3,
-    name: "David Chen",
-    role: "Head of Tech",
-    bio: "Full-stack architect ensuring our ecosystems are as robust as they are beautiful.",
-    image: dummyImage,
+    name: "Kalkidan Senbeto",
+    role: "Creative Manager",
+    bio: "Creative Manager",
+    image: kalkidan,
   },
   {
     id: 4,
-    name: "Elena Ross",
-    role: "Client Strategy",
+    name: "Bernabas Awgchew",
+    role: "Project Manager",
     bio: "The bridge between client goals and creative execution.",
-    image: dummyImage,
+    image: bernabas,
   },
 ]
 
@@ -59,7 +64,7 @@ const TeamSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-white/10 py-12 mb-24"
+          className="grid grid-cols-2 md:grid-cols-3 gap-8 border-y border-white/10 py-12 mb-24"
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center md:text-left">

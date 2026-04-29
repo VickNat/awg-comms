@@ -8,37 +8,39 @@ import Link from 'next/link'
 const projects = [
   {
     id: 1,
-    title: "XPress Leads",
-    category: "App Design",
-    description: "Streamlining lead retrieval for global trade shows.",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
-    tags: ["USA", "SaaS", "UX/UI"],
+    title: "Yod Abyssinya",
+    category: "Strategy",
+    description: "A Digital Marketing Project for Yod Abyssinya.",
+    video:
+      "https://www.youtube.com/embed/TIflCFqr6bs?autoplay=1&mute=1&loop=1&playlist=TIflCFqr6bs",
+    tags: ["Ethiopia", "Branding"],
   },
   {
     id: 2,
-    title: "Apex Finance",
-    category: "Fintech Platform",
-    description: "A high-frequency trading dashboard for modern investors.",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
-    tags: ["React", "Dashboard"],
+    title: "Wow Furniture",
+    category: "Production",
+    description: "A Creative Showroom Production.",
+    video:
+      "https://www.youtube.com/embed/G9V-SsBjdtw?autoplay=1&mute=1&loop=1&playlist=G9V-SsBjdtw",
+    tags: ["Videography", "Editorial"],
   },
-  {
-    id: 3,
-    title: "Neon City",
-    category: "Brand Identity",
-    description: "Reimagining urban aesthetics for a cyberpunk brand.",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
-    tags: ["Branding", "3D Motion"],
-  },
-  {
-    id: 4,
-    title: "EcoVision",
-    category: "Web Design",
-    description: "Sustainable energy reporting for the next century.",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
-    tags: ["Editorial", "GSAP"],
-  },
-]
+  // {
+  //   id: 3,
+  //   title: "Neon City",
+  //   category: "Brand Identity",
+  //   description: "Reimagining urban aesthetics for a cyberpunk brand.",
+  //   video: "https://www.youtube.com/embed/D0UnqGm_miA",
+  //   tags: ["Branding", "3D Motion"],
+  // },
+  // {
+  //   id: 4,
+  //   title: "EcoVision",
+  //   category: "Web Design",
+  //   description: "Sustainable energy reporting for the next century.",
+  //   video: "https://www.youtube.com/embed/D0UnqGm_miA",
+  //   tags: ["Editorial", "GSAP"],
+  // },
+];
 
 const FeaturedProjectsSection = () => {
   const targetRef = useRef<HTMLDivElement>(null)
@@ -112,13 +114,16 @@ const FeaturedProjectsSection = () => {
 
               {/* --- TOP: MEDIA AREA (60% Height) --- */}
               <div className="relative h-[60%] w-full bg-black border-b border-white/5 overflow-hidden">
-                <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute inset-0 pointer-events-">
                   <iframe
                     width="100%"
                     height="100%"
-                    src={`${project.video}?controls=0&autoplay=1&mute=1&loop=1&playlist=D0UnqGm_miA`}
+                    src={project.video}
                     title={project.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-700 scale-[1.3] group-hover:scale-[1.1]"
                   />
                 </div>
@@ -131,11 +136,11 @@ const FeaturedProjectsSection = () => {
                 </div>
 
                 {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
                   <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
                     <Play className="w-6 h-6 text-white fill-white translate-x-0.5" />
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* --- BOTTOM: CONTENT AREA (40% Height) --- */}

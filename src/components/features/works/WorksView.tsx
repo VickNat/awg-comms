@@ -1,63 +1,108 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, Play, Filter } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+// import { ArrowUpRight, Play, Filter } from 'lucide-react'
+// import { Button } from "@/components/ui/button"
+import Image from 'next/image'
 
 // --- DUMMY DATA ---
+// const projects = [
+//   {
+//     id: 1,
+//     client: "XPress Leads",
+//     category: "Development",
+//     title: "Global Trade Show App",
+//     video: "https://www.youtube.com/embed/D0UnqGm_miA",
+//     size: "large", // Spans 2 cols
+//   },
+//   {
+//     id: 2,
+//     client: "Apex Finance",
+//     category: "Branding",
+//     title: "High-Frequency Dashboard",
+//     video: "https://www.youtube.com/embed/D0UnqGm_miA",
+//     size: "small",
+//   },
+//   {
+//     id: 3,
+//     client: "Neon City",
+//     category: "Production",
+//     title: "Cyberpunk Fashion Campaign",
+//     video: "https://www.youtube.com/embed/D0UnqGm_miA",
+//     size: "small",
+//   },
+//   {
+//     id: 4,
+//     client: "EcoVision",
+//     category: "Strategy",
+//     title: "Sustainability Report 2025",
+//     video: "https://www.youtube.com/embed/D0UnqGm_miA",
+//     size: "small",
+//   },
+//   {
+//     id: 5,
+//     client: "Urban Pulse",
+//     category: "Production",
+//     title: "City Sounds Documentary",
+//     video: "https://www.youtube.com/embed/D0UnqGm_miA",
+//     size: "small",
+//   },
+//   {
+//     id: 6,
+//     client: "Velocita",
+//     category: "Branding",
+//     title: "EV Automotive Rebrand",
+//     video: "https://www.youtube.com/embed/D0UnqGm_miA",
+//     size: "large", // Spans 2 cols
+//   },
+
 const projects = [
   {
     id: 1,
-    client: "XPress Leads",
-    category: "Development",
-    title: "Global Trade Show App",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
+    client: "Chanoly Noodles",
+    category: "Strategy",
+    title: "Chanoly Creative Gallery",
+    image: "/pdf2png/chanoly-1.png",
     size: "large", // Spans 2 cols
   },
   {
     id: 2,
-    client: "Apex Finance",
+    client: "Wild Coffee",
     category: "Branding",
-    title: "High-Frequency Dashboard",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
+    title: "Wild Coffee Creative Gallery",
+    image: "/pdf2png/wildcoffee-1.png",
     size: "small",
   },
   {
     id: 3,
-    client: "Neon City",
-    category: "Production",
-    title: "Cyberpunk Fashion Campaign",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
+    client: "Yod Abyssinya",
+    category: "Strategy",
+    title: "Yod Abyssinya Creative Gallery",
+    image: "/pdf2png/yodaby-1.png",
     size: "small",
   },
   {
     id: 4,
-    client: "EcoVision",
-    category: "Strategy",
-    title: "Sustainability Report 2025",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
+    client: "Merhaba Tour & Travel",
+    category: "PR",
+    title: "Merhaba PR Event",
+    image: "/pdf2png/merhaba-pr.png",
     size: "small",
   },
   {
     id: 5,
-    client: "Urban Pulse",
-    category: "Production",
-    title: "City Sounds Documentary",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
+    client: "Chanoly Noodles",
+    category: "Event",
+    title: "6th Anniversary Celebration",
+    image: "/pdf2png/chanoly-ev.png",
     size: "small",
   },
-  {
-    id: 6,
-    client: "Velocita",
-    category: "Branding",
-    title: "EV Automotive Rebrand",
-    video: "https://www.youtube.com/embed/D0UnqGm_miA",
-    size: "large", // Spans 2 cols
-  },
-]
 
-const filters = ["All", "Strategy", "Branding", "Production", "Development"]
+];
+
+
+const filters = ["All", "Strategy", "Branding", "Production", "Event"]
 
 const WorksView = () => {
   const [activeFilter, setActiveFilter] = useState("All")
@@ -131,14 +176,22 @@ const WorksView = () => {
                 
                 {/* --- A. VIDEO MEDIA --- */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <iframe 
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes={project.size === 'large' ? '(min-width: 768px) 100vw, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-[1.3] group-hover:scale-[1.1]"
+                  />
+                  
+                  {/* <iframe 
                     width="100%" 
                     height="100%" 
                     src={`${project.video}?controls=0&autoplay=1&mute=1&loop=1&playlist=D0UnqGm_miA`} 
                     title={project.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-[1.3] group-hover:scale-[1.1]" 
-                  />
+                  /> */}
                 </div>
 
                 {/* --- B. OVERLAY CONTENT --- */}
@@ -153,11 +206,11 @@ const WorksView = () => {
                 </div>
 
                 {/* Center Play Button (Reveals on Hover) */}
-                <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                {/* <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-500">
                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center shadow-2xl scale-50 group-hover:scale-100 transition-transform duration-500 delay-100">
                       <Play className="w-8 h-8 text-white fill-white translate-x-1" />
                    </div>
-                </div>
+                </div> */}
 
                 {/* Bottom Info Bar */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-20 flex justify-between items-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -170,9 +223,9 @@ const WorksView = () => {
                     </h2>
                   </div>
 
-                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/[0.05] group-hover:bg-white group-hover:text-black transition-all duration-300">
+                  {/* <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/[0.05] group-hover:bg-white group-hover:text-black transition-all duration-300">
                     <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-                  </div>
+                  </div> */}
                 </div>
 
               </motion.div>
