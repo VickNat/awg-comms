@@ -75,13 +75,13 @@ const AboutUsBanner = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="inline-flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md"
+            className="inline-flex items-center gap-4 p-4 rounded-2xl bg-white/3 border border-white/10 backdrop-blur-md"
           >
              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 <Users className="w-6 h-6" />
              </div>
              <div>
-                <p className="text-2xl font-bold text-white leading-none">25+</p>
+                <p className="text-2xl font-bold text-white leading-none">20+</p>
                 <p className="text-xs text-white/40 uppercase tracking-widest mt-1">Creative Minds</p>
              </div>
           </motion.div>

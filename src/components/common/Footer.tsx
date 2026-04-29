@@ -51,18 +51,14 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className="relative bg-background pt-20 pb-10 px-4 md:px-6">
-      
       {/* THE BIG ISLAND CONTAINER */}
       <div className="max-w-[95%] mx-auto bg-white/2 border border-white/10 rounded-[3rem] overflow-hidden relative">
-        
         {/* Decorative Top Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-linear-to-r from-transparent via-primary/50 to-transparent blur-[2px]" />
-        
+
         <div className="px-8 md:px-16 py-16 md:py-20">
-          
           {/* 1. TOP SECTION: CTA & LOGO */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-20 border-b border-white/5 pb-16">
-            
             {/* Logo & Tagline */}
             <div className="space-y-6">
               <div className="relative w-40 h-auto opacity-90">
@@ -75,7 +71,8 @@ const Footer = () => {
                 />
               </div>
               <p className="text-muted-foreground/60 max-w-sm text-sm leading-relaxed">
-                Elevating brands through data-driven strategy and human-centric design.
+                Elevating brands through data-driven strategy and human-centric
+                design.
               </p>
             </div>
 
@@ -95,31 +92,34 @@ const Footer = () => {
 
           {/* 2. MIDDLE SECTION: LINKS GRID */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
-            
             {/* Contact Info (Spans 4 cols) */}
             <div className="md:col-span-4 space-y-6">
-               <h3 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Contact</h3>
-               
-               <div className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors cursor-pointer group">
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <span>hello@awgcommunications.com</span>
-               </div>
-               
-               <div className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors cursor-pointer group">
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <span>Addis Ababa, Ethiopia</span>
-               </div>
+              <h3 className="text-white font-bold uppercase tracking-widest text-xs mb-6">
+                Contact
+              </h3>
 
-               <div className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors cursor-pointer group">
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <span>+251 911 22 33 44</span>
-               </div>
+              <div className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors cursor-pointer group">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <span>awgcommunications4@gmail.com</span>
+              </div>
+
+              <div className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors cursor-pointer group">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <span>
+                  Le gare, Orda bld, 15th Floor <br /> Addis Ababa, Ethiopia
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors cursor-pointer group">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span>+251 922 45 10 07</span>
+              </div>
             </div>
 
             {/* Navigation Links (Spans 8 cols) */}
@@ -132,8 +132,8 @@ const Footer = () => {
                   <ul className="space-y-4">
                     {column.links.map((link) => (
                       <li key={link}>
-                        <Link 
-                          href="#" 
+                        <Link
+                          href="#"
                           className="text-muted-foreground/60 hover:text-primary text-sm transition-colors duration-300"
                         >
                           {link}
@@ -155,7 +155,7 @@ const Footer = () => {
             {/* Colorful Hover Socials */}
             <div className="flex gap-4">
               {socialLinks.map((social) => (
-                <Link 
+                <Link
                   key={social.name}
                   href={social.href}
                   className={`
@@ -170,15 +170,13 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
         </div>
 
         {/* Big Background Glow inside the island */}
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-        
       </div>
     </footer>
-  )
+  );
 }
 
 export default Footer
