@@ -20,19 +20,19 @@ const stats = [
 ]
 
 const teamMembers = [
-  {
-    id: 1,
-    name: "Dawit Tsegaye",
-    role: "CSO",
-    bio: "Chief Strategic Officer.",
-    image: dawit,
-  },
+  // {
+  //   id: 1,
+  //   name: "Dawit Tsegaye",
+  //   role: "CSO",
+  //   bio: "Chief Strategic Officer.",
+  //   image: dawit,
+  // },
   {
     id: 2,
-    name: "Natanim Ashenafi",
-    role: "CTO",
-    bio: "Chief Technologies Officer",
-    image: natanim,
+    name: "Bernabas Awgchew",
+    role: "Project Manager",
+    bio: "The bridge between client goals and creative execution.",
+    image: bernabas,
   },
   {
     id: 3,
@@ -43,10 +43,10 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Bernabas Awgchew",
-    role: "Project Manager",
-    bio: "The bridge between client goals and creative execution.",
-    image: bernabas,
+    name: "Natanim Ashenafi",
+    role: "CTO",
+    bio: "Chief Technologies Officer",
+    image: natanim,
   },
 ]
 
